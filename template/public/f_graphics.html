@@ -1,0 +1,51 @@
+<h3>
+Graphic design job submision
+</h3>
+
+
+<form ng-submit="addProject()" target="_self" action="#/Thankyou_graphics">
+
+
+    <div class="form-group">
+        <label for="newJob">New project</label>
+        <div>
+            <input type="text" required id="newJob" class="form-control" ng-model="newJob"
+                   placeholder="Project name">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="newClient">email</label>
+        <div>
+            <input class="form-control" required id="newClient" ng-model="newClient"
+                   placeholder="What is your eamil">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="newDate">Due Date</label>
+        <div>
+            <input class="form-control" type="text" required id="newDate" ng-model="newDate"
+                   placeholder="what is your due date???">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="newAttachments">Attachements</label>
+        <div>
+            <input class="form-control" type="file" placeholder="Any attaschments" ng-model="nameImg" id="nameImg">
+        </div>
+    </div>
+
+    <div class=" form-group">
+        <label for="newBrief">Project details</label>
+        <div>
+                        <textarea class="form-control" type="text" ng-model="newBrief"
+                                  placeholder="Please tell us as much as you can about your project."></textarea>
+        </div>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+

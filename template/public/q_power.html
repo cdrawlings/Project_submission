@@ -1,0 +1,96 @@
+<div>
+    Admin window 35 h
+</div>
+
+
+
+
+pending
+
+
+
+
+
+<ul ui-sortable="sortableOptions" ng-model="power">
+    <li class="btn btn-default" ng-repeat="item in power | filter : {'status' : 'pending'}">
+         {{item.job}} | {{item.due_date}} |
+        <button type="button" class="btn btn-default""
+                data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
+        </button>
+id="dialogTestDialog{{$index}}"
+
+
+ <a href="#" editable-text="item.status" editable-select="user.status" e-ng-options="s.value as s.text for s in statuses" onbeforesave="saveEdit(item)">
+    {{ item.status }}
+  </a>
+
+
+
+
+        <!-- Modal window -->
+
+        <div class="modal" id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog"
+             aria-labelledby="executionOptionLabel"
+             aria-hidden="true">
+            <div class="modal-dialog pop">
+                <div class="modal-content">
+                    <p> Job  title:</span> {{item.job}}</p>
+                    <div class="modal-body">
+                        <p><strong>JSubmitter:</strong> </{{item.client}}</p>
+                        <p><strong>Due date: </strong> <a href="#" editable-text="item.due_date"
+                                                          onbeforesave="saveEdit($data,item)">{{ item.due_date || 'empty'
+                            }}</a></p>
+
+                        <p><strong>Brief: </strong> {{item.brief}}</p>
+                        <p><strong>Comment: </strong> <a href="#" editable-text="item.comment"
+                                                         onbeforesave="item.comment=$data;saveEdit(item)">{{item.comment}}</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+</ul>
+
+
+
+
+
+
+Working
+
+<ul ui-sortable="sortableOptions" ng-model="power">
+    <li class="btn btn-default" ng-repeat="item in power | orderBy:  'priority' | filter : {'status' : 'working'}">
+         {{item.job}} | {{item.due_date}} |
+        <button type="button" class="btn btn-default""
+                data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
+        </button>
+
+
+        <!-- Modal window -->
+
+        <div class="modal " id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog"
+             aria-labelledby="executionOptionLabel"
+             aria-hidden="true">
+            <div class="modal-dialog pop">
+                <div class="modal-content">
+                    <p> Job  title:</span> {{item.job}}</p>
+                    <div class="modal-body">
+                        <p><strong>JSubmitter:</strong> </{{item.client}}</p>
+                        <p><strong>Due date: </strong> <a href="#" editable-text="item.due_date"
+                                                          onbeforesave="saveEdit(item)">{{ item.due_date || 'empty'
+                            }}</a></p>
+
+                        <p><strong>Brief: </strong> {{item.brief}}</p>
+                        <p><strong>Comment: </strong> <a href="#" editable-text="item.comment"
+                                                         onbeforesave="saveEdit($data)">{{item.comment}}</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+</ul>
+

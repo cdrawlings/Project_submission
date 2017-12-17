@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"  data-framework="firebase">
+	<head>
+		<meta charset="utf-8">
+		<title>mesages</title>
+
+		<style>[ng-cloak] { display: none; }</style>
+
+
+
+
+
+	</head>
+	<body ng-app="sampleApp" ng-controller="projectCtrl">
+
+    <div>
+  <ul class="chatbox">
+    <li ng-repeat="todo in todos">{{ todo.client }} | {{ todo.job }} | {{todo.due_date}} | {{todo.brief}} | {{todo.attachments}}</li>
+  </ul>
+  <form ng-submit="addProject()">
+    <input type="text" ng-model="newJob">
+      <input type="text" ng-model="newClient">
+       <input type="text" ng-model="newDate">
+       <input type="text" ng-model="newBrief">
+        <input type="text" ng-model="newAttachments">
+    <input type="submit" value="Add Message">
+  </form>
+</div>
+
+
+	<div ng-view=""></div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA5YqKWax1Gxqq6G5_QFVU9lEBIp8hxhSQ",
+    authDomain: "submit-job-ec161.firebaseapp.com",
+    databaseURL: "https://submit-job-ec161.firebaseio.com/",
+    projectId: "submit-job-ec161",
+    storageBucket: "submit-job-ec161.appspot.com",
+    messagingSenderId: "812822357521"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+    <!-- jQuery -->
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- bootstrap -->
+
+
+    <!-- AngularJS -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <!-- UIsortable -->
+
+  <script src="https://rawgithub.com/angular-ui/ui-sortable/master/src/sortable.js"></script>
+
+
+    <script src="../scripts/xeditable.min.js"></script>
+
+		<script src="img2fire.js"></script>
+	</body>
+</html>

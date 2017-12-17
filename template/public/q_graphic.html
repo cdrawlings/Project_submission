@@ -1,0 +1,99 @@
+<h3 class="bold blue">
+Graphic design job queue</h3>
+
+
+
+
+<h4 class="bold green">pending</h4>
+
+
+<table>
+
+<tr ng-repeat="item in todos | filter : {'status' : 'pending'}">
+    <td class="bold blue sixty">{{item.job}}</td>
+
+    <td class="twenty">{{item.due_date}}</td>
+
+    <td class="twenty"><button type="button" class="btn btn-default gray right"
+                data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
+        </button></td>
+</tr>
+</table>
+
+
+
+
+
+
+        <!-- Modal window -->
+
+        <div class="modal model-text " id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog"
+             aria-labelledby="executionOptionLabel"
+             aria-hidden="true">
+            <div class="modal-dialog pop">
+                <div class="modal-content model-text modal-custom">
+                    <h3 class="modal-title"> <strong>{{item.job}}</strong></h3>
+                    <div class="modal-body model-text">
+                        <p><span class="bold blue">JSubmitter:</span> {{item.client}}</p>
+                        <p><span class="bold blue">Due date:</span> {{item.due_date}}</p>
+                        <p><span class="bold blue">Brief:</span> {{item.brief}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+<h4 class="bold green">Working</h4>
+
+
+
+<table>
+<tr ng-repeat="item in todos | filter : {'status' : 'working'}">
+    <td class="bold blue sixty">{{item.job}}</td>
+
+    <td class="twenty">{{item.due_date}}</td>
+
+    <td class="twenty"><button type="button" class="btn btn-default gray right"
+                data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
+        </button></td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+         <!-- Modal window -->
+
+        <div class="modal model-text " id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog"
+             aria-labelledby="executionOptionLabel"
+             aria-hidden="true">
+            <div class="modal-dialog pop">
+                <div class="modal-content model-text modal-custom">
+                    <h3 class="modal-title"> <strong>{{item.job}}</strong></h3>
+                    <div class="modal-body model-text">
+                        <p><span class="bold blue">JSubmitter:</span> {{item.client}}</p>
+                        <p><span class="bold blue">Due date:</span> {{item.due_date}}</p>
+                        <p><span class="bold blue">Brief:</span> {{item.brief}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+

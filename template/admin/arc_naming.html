@@ -1,0 +1,90 @@
+<h3>
+    Naming design jobs</h3>
+
+
+<h4>Archived jobs</h4>
+
+
+
+      <ul ui-sortable="sortableOptions" ng-model="naming">
+  <li ng-repeat="item in naming | orderBy:  'priority' | filter : {'status' : 'Archived'}" >
+       {{item.job}} |  {{item.due_date}}  |  <button type="button" class="detail"
+							data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details</button>
+
+
+<button type="button" class="btn btn-default btn-sm"  ng-click="startTodo($index, todo)">
+  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Make active</span>
+</button>
+          <!-- Modal window -->
+
+						<div class="modal " id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog" aria-labelledby="executionOptionLabel"
+                                aria-hidden="true">
+                            <div class="modal-dialog pop">
+                                <div class="modal-content">
+
+                                        <div class="modal-body">
+
+											 <p><strong>Due date: </strong> <a href="#" editable-text="item.due_date" onbeforesave="saveEdit(item)">{{ item.due_date || 'empty' }}</a></p>
+
+                                            <p>Job Submitter: {{item.client}}</p>
+
+                                            <p><strong>Division: </strong> {{item.division}}</p>
+                                             <p><span class="sh job-sub"> VP Approver:</span> {{item.approval}}</p>
+                                             <p><span class="sh job-sub"> Project working name:</span> {{item.job}}</p>
+                                             <p><span class="sh job-sub"> Overview:</span> {{item.overview}}</p>
+                                            <p><span class="sh job-sub"> Relace:</span> {{item.replace}}</p>
+                                             <p><span class="sh job-sub"> Core:</span> {{item.core}}</p>
+                                             <p><span class="sh job-sub"> How will it be accesed:</span> {{item.access}}</p>
+
+                                             <p><span class="sh job-sub"> Do you need a URL?:</span> {{item.url}}</p>
+                                             <p><span class="sh job-sub"> Region:</span> {{item.region}}</p>
+                                             <p><span class="sh job-sub"> Features</span> {{item.features}}</p>
+                                             <p><span class="sh job-sub"> Benefits:</span> {{item.benefits}}</p>
+                                             <p><span class="sh job-sub"> Developed by</span> {{item.party}}</p>
+                                             <p><span class="sh job-sub"> Private label:</span> {{item.label}}</p>
+                                             <p><span class="sh job-sub"> Contract with:</span> {{item.contract}}</p>
+                                             <p><span class="sh job-sub"> Who supports</span> {{item.support}}</p>
+                                             <p><span class="sh job-sub"> Exclusive</span> {{item.exclusive}}</p>
+                                             <p><span class="sh job-sub"> Sell to other distributors:</span> {{item.sell}}</p>
+                                             <p><span class="sh job-sub"> product delivery date:</span> {{item.delivery}}</p>
+                                             <p><span class="sh job-sub"> What stage:</span> {{item.stage}}</p>
+                                             <p><span class="sh job-sub"> Testing schedule:</span> {{item.schedule}}</p>
+                                             <p><span class="sh job-sub"> Phased introduction:</span> {{item.phase}}</p>
+                                             <p><span class="sh job-sub"> Added features:</span> {{item.added_features}}</p>
+                                             <p><span class="sh job-sub"> Life span:</span> {{item.life_span}}</p>
+                                             <p><span class="sh job-sub"> Do competitors have a simliar product:</span> {{item.competitors}}</p>
+                                             <p><span class="sh job-sub"> what are our advantages:</span> {{item.advantage}}</p>
+                                             <p><span class="sh job-sub"> Important words:</span> {{item.important}}</p>
+                                             <p><span class="sh job-sub"> Words to avoid:</span> {{item.avoid}}</p>
+                                            <p><span class="sh job-sub"> Suggested names:</span> {{item.suggest}}</p>
+                                            <p><span class="sh job-sub"> Documentation:</span> {{item.document}}</p>
+                                            <p><span class="sh job-sub"> Sales contact:</span> {{item.sales}}</p>
+                                            <p><span class="sh job-sub"> Product contract:</span> {{item.product}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <p><strong>Comment: </strong> <a href="#" editable-text="item.comment" onbeforesave="saveEdit(item)">{{item.comment}}</a></p>
+										</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+        </li>
+</ul>
+
+
+
+
+

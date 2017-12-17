@@ -1,0 +1,84 @@
+p {
+font-family:'Open Sans',sans-serif;
+}
+.light {
+font-weight:300;
+
+}
+.semibold {
+font-weight:600;
+}
+.bold {
+font-weight:700;
+}
+
+.blue {
+    color: #0075b0;
+}
+
+.green {
+    color: #78be20;
+}
+
+.gray {
+    color: #63666a;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.model-text {
+    color: #63666a;
+    text-align: left;
+}
+
+.modal-custom {
+    padding: 40px;
+}
+
+.modal-title {
+    color: #0075b0;
+    font-weight: bold;
+}
+
+.queue-list {
+    list-style: none;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.sixty {
+    width: 50%;
+}
+
+.quote {
+    font-weight: 200;
+    font-style: italic;
+    color: #78be20;
+    font-size: 24px;
+    text-align: center;
+}
+
+.twenty {
+    width: 20%;
+}
+
+.ul-width {
+    width: 100%;
+}
+
+.job-modal {
+    width: 50%;
+}
+.date-modal {
+    width: 25%;
+}
+

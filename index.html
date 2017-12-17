@@ -1,0 +1,105 @@
+
+<html>
+<head>
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+
+<style>[ng-cloak] { display: none; }</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body ng-app="App" ng-controller="projectCtrl">
+<nav class="navbar navbar-default ">
+  <div class="container-fluid hder">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand nav-txt navbar-custom" href="#">Brand 2</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" bs-active-link>
+          <li class="nav-txt"> <a href="#/Home">Home</a> </li>
+          <li class="nav-txt"> <a href="#/Login">Admin</a> </li>
+          <li class="nav-txt"> <a href="#/Queue">Job queue</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+
+
+        <div ng-view=""></div>
+</div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA5YqKWax1Gxqq6G5_QFVU9lEBIp8hxhSQ",
+    authDomain: "submit-job-ec161.firebaseapp.com",
+    databaseURL: "https://submit-job-ec161.firebaseio.com/",
+    projectId: "submit-job-ec161",
+    storageBucket: "submit-job-ec161.appspot.com",
+    messagingSenderId: "812822357521"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+  <!-- AngularJS -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.4/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+<script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script src="//code.angularjs.org/1.6.1/angular-cookies.js"></script>
+
+
+
+ <link href="bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="bower_components/bootstrap/bootstrap.min.js"></script>
+
+<!--
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+-->
+
+  <script src="//rawgithub.com/angular-ui/ui-sortable/master/src/sortable.js"></script>
+<link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+
+ <!--- App script-->
+<script src="app.js"></script>
+<script src="template/authentication/services.js"></script>
+<script src="template/authentication/controllers.js"></script>
+<script src="template/admin/controllers.js"></script>
+<link href="custom.css" rel="stylesheet">
+
+
+</body>
+</html>

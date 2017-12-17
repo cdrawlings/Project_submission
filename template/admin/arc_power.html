@@ -1,0 +1,44 @@
+<h3>
+    PowerPoint jobs</h3>
+
+
+<h4>Archived jobs</h4>
+
+
+
+
+      <ul ui-sortable="sortableOptions" ng-model="power">
+  <li ng-repeat="item in power | orderBy:  'priority' | filter : {'status' : 'Archived'}" >
+       {{item.job}} |  {{item.due_date}}  |  <button type="button" class="detail"
+							data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details</button>
+
+
+<button type="button" class="btn btn-default btn-sm"  ng-click="startTodo($index, todo)">
+  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Make active</span>
+</button>
+          <!-- Modal window -->
+
+						<div class="modal " id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog" aria-labelledby="executionOptionLabel"
+                                aria-hidden="true">
+                            <div class="modal-dialog pop">
+                                <div class="modal-content">
+                                        <p><span class="sh job-sub"> Job  title:</span> {{item.job}}</p>
+                                        <div class="modal-body">
+											<p><strong>JSubmitter: </{{item.client}}</p>
+                                            <p><strong>Due date: </strong> <a href="#" editable-text="item.due_date" onbeforesave="saveEdit(item)">{{ item.due_date || 'empty' }}</a></p>
+
+                                            <p><strong>Brief: </strong> {{item.brief}}</p>
+                                            <p><strong>Comment: </strong> <a href="#" editable-text="item.comment" onbeforesave="saveEdit(item)">{{item.comment}}</a></p>
+										</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+        </li>
+</ul>
+
+
+
+
+

@@ -1,0 +1,120 @@
+<h3>
+    Graphic design jobs</h3>
+
+
+<h4>Pending jobs</h4>
+
+
+<ul ui-sortable="sortableOptions" ng-model="todos">
+    <li ng-repeat="item in todos | orderBy:  'priority' | filter : {'status' : 'pending'}">
+        {{item.job}} | {{item.due_date}} |
+        <button type="button" class="detail"
+                data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
+        </button>
+
+         <!--START TODO BUTTON
+        <a class="btn btn-warning"
+           ng-click="startTodo($index, todo)">
+            Start
+        </a>-->
+
+
+
+<button type="button" class="btn btn-default btn-sm"  ng-click="startTodo($index, todo)">
+  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+</button>
+
+        <!-- Modal window -->
+
+        <div class="modal" id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog"
+             aria-labelledby="executionOptionLabel"
+             aria-hidden="true">
+            <div class="modal-dialog pop">
+                <div class="modal-content modal-custom">
+                    <h3 class="modal-title">{{item.job}}</h3>
+                    <div class="modal-body">
+                        <p><span class="bold blu">JSubmitter:</span>  {{item.client}}</p>
+                        <p><span class="bold blu">Due date: </span> <a href="#" editable-text="item.due_date"
+                                                          onbeforesave="saveEdit($data, item, 'due_date')">{{
+                            item.due_date || 'empty' }}</a></p>
+
+                        <p><span class="bold blu">Brief:</span>  {{item.brief}}</p>
+                        <p><span class="bold blu">Attachment:</span> <a href="{{item.attachment}}">download</a></p>
+                        <p><span class="bold blu">Comment: </span> <a href="#" editable-textarea="item.comment"
+                                                         onbeforesave="saveEdit($data, item, 'comment')">{{item.comment}}</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </li>
+</ul>
+
+
+<h4>Active jobs</h4>
+
+
+<ul ui-sortable="sortableOptions" ng-model="todos">
+    <li ng-repeat="item in todos | orderBy:  'priority' | filter : {'status' : 'working'}">
+    {{item.job}} | {{item.due_date}} |
+    <button type="button" class="detail"
+            data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
+    </button>
+<!--
+        <a class="btn btn-warning"
+           ng-click="completeTodo($index, todo)">
+           Archive
+        </a>
+        -->
+
+<button type="button" class="btn btn-default btn-sm"  ng-click="ompleteTodo($index, todo)" >
+  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+</button>
+
+
+<button type="button" class="btn btn-default btn-sm"  ng-click="removeTodo($index, todo)" >
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</button>
+
+
+
+        <!--DELETE TODO BUTTON
+        <a class="btn btn-danger"
+           ng-click="removeTodo($index, todo)">
+            <i class="glyphicon glyphicon-remove"></i>Remove
+        </a>
+-->
+
+    <!-- Modal window -->
+
+    <div class="modal " id="dialogTestDialog{{$index}}" tabindex="-1" role="dialog"
+         aria-labelledby="executionOptionLabel"
+         aria-hidden="true">
+        <div class="modal-dialog pop">
+            <div class="modal-content">
+                <p><span class="sh job-sub"> Job  title:</span> {{item.job}}</p>
+                <div class="modal-body">
+                    <p><strong>JSubmitter: </{{item.client}}</p>
+                    <p><strong>Due date: </strong> <a href="#" editable-text="item.due_date"
+                                                      onbeforesave="saveEdit($data, item, 'due_date')">{{ item.due_date
+                        || 'empty' }}</a></p>
+                    <img ng-src="{{ item.image }}"/>
+                    <p><strong> {{ item.image }}</p>
+                    <p><strong>Brief: </strong> {{item.brief}}</p>
+                    <p><strong>Comment: </strong> <a href="#" editable-text="item.comment"
+                                                     onbeforesave="saveEdit($data, item, 'comment')">{{item.comment}}</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </li>
+</ul>
+
+
+
+

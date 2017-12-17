@@ -1,0 +1,200 @@
+<div style="padding-left: 40px">
+<div class="introbox">
+					<div>
+                        <div class='intro-text sh'>
+                        What do you need to name? 2
+                        </div>
+                    </div>
+
+
+
+</div>
+
+<form ng-submit="addNaming()" target="_self" action="#/Thankyou_naming" >
+    <input class="form" type="text" ng-model="newDate" placeholder="Project due date">
+    <input class="form" type="email" ng-model="newClient" placeholder="Your email">
+
+    <input class="form" type="text" ng-model="newDept" placeholder="What is your Division?">
+
+    <input class="form" type="text" ng-model="newApproval" placeholder="VP Approval"></input>
+
+    <input class="form" type="text" ng-model="newProject" placeholder="Project working name?"></input>
+    <br />
+
+
+    <p>Note: an existing product is not renamed for an added feature or enhancement. This includes:</p>
+<ul><li> New development to an existing product</li><li>
+Adding new functionality to an existing product</li><li>
+    Adding a new, chargeable feature or enhancement to an existing product</li></ul>
+    <p>The process: The brand team begins the naming process by determining if your element is</p>
+    <ul><li>A platform capability, can it connect to or is it consumed by a product and/or feature?</li><li>
+A platform setting, does it allow capabilities of the platform to be tailored?</li><li>
+A product, does it facilitate the consumption of the platform capabilities?</li><li>
+        A service, is it a self-serve or human interaction component that is shared across the organization and/or our customer base?</li><li>
+        A feature, is it a distinguishing characteristic or element of a product or capability that performs a function?</li></ul>
+<p>Once determined, we will proceed with the company’s defined naming process to provide the
+    best suitable name.</p>
+<p></p>Additionally, the naming steering committee meets once a month to finalize the proposed
+name. Receipt of your request will be acknowledged, along with an estimated time frame for
+your name.<p></p>
+    <p style="font-weight: 800"> Please complete this form in its entirety.</p>
+
+
+ <p>Provide a high-level overview of the element (one paragraph or less as additional details are asked further below).
+ </p>
+    <textarea class="form" type="text" ng-model="newOver" placeholder="Overview"></textarea>
+
+<p>
+Does this replace an existing product or capability?  If so, please explain and include its anticipated retirement date.
+</p> <textarea class="form" type="text" ng-model="newReplace" placeholder="Replace"></textarea>
+<p>
+Which core system will this product operate on? (Travelport Apollo, Travelport Galileo, Travelport Worldspan, or all?)
+</p>
+    <textarea class="form" type="text" ng-model="newCore" placeholder="Core"></textarea>
+
+
+<p>
+How will it be accessed?
+</p>
+    <textarea class="form" type="text" ng-model="newAccess" placeholder="Access"></textarea>
+<p>
+Will you need a specific URL?
+</p>
+    <textarea class="form" type="text" ng-model="newURL" placeholder="URL"></textarea>
+<p>
+Target Audience
+</p>
+<p>
+What customer group(s) will this apply to?  (e.g. agency, corporate, travel suppliers, e-commerce partners, etc.)
+</p>
+ <textarea class="form" type="text" ng-model="newGroup" placeholder="Audience"></textarea>
+<p>
+Is it for a specific region? Or global use?
+</p> <textarea class="form" type="text" ng-model="newRegion" placeholder="Region"></textarea>
+<p>
+Features and Benefits
+</p>
+<p>
+    What are its key features?</p>
+     <textarea class="form" type="text" ng-model="newFeatures" placeholder="features"></textarea>
+
+<p>
+    What are its key benefits to the customer?</p>
+  <textarea class="form" type="text" ng-model="newBenefits" placeholder="Benefits"></textarea>
+<p>
+    Product Development</p>
+<p>
+    Was this developed by Travelport or a third party? If third party, please state name.</p>
+ <textarea class="form" type="text" ng-model="newParty" placeholder="Third party"></textarea>
+
+    <p>
+If third-party developed:<br/>
+        Does Travelport have the authority to private label it?</p>
+    <textarea class="form" type="text" ng-model="newLabel" placeholder="white label"></textarea>
+<p>
+    Who will our customers contract with (Travelport or third party)?</p>
+<textarea class="form" type="text" ng-model="newContract" placeholder="Contract with"></textarea>
+<p>
+    Who will provide first level of support?</p>
+<textarea class="form" type="text" ng-model="newSupport" placeholder="Support"></textarea>
+<p>
+Is there an exclusivity period (if so, please state length)?
+</p>
+<textarea class="form" type="text" ng-model="newExclusive" placeholder="Exclusive"></textarea>
+<p>
+Will the third party also sell this product to other distribution systems?
+</p>
+<textarea class="form" type="text" ng-model="newSell" placeholder="Sell"></textarea>
+<p>
+Roll Out<br />
+
+    What is the projected completion and/or market delivery date?</p>
+
+<textarea class="form" type="text" ng-model="newDelivery" placeholder="Delivery"></textarea>
+<p>
+    What stage of development is it in right now?</p>
+
+<textarea class="form" type="text" ng-model="newStage" placeholder="Stage"></textarea>
+<p>
+    What is the testing schedule (alpha, beta, etc.)?</p>
+
+
+
+
+<textarea class="form" type="text" ng-model="newSchedule" placeholder="Schedule"></textarea>
+<p>
+    Will it be introduced all at once or in phases?</p>
+
+<textarea class="form" type="text" ng-model="newPhase" placeholder="Phase"></textarea>
+<p>
+Are there features which are anticipated to be added or modified to the product in the coming year?
+</p>
+<textarea class="form" type="text" ng-model="newAddFeat" placeholder="Added features"></textarea>
+<p>
+What is the anticipated life span of this product?
+</p>
+<textarea class="form" type="text" ng-model="newLifeSpan" placeholder="Life span"></textarea>
+
+
+<p>
+Competitive Information
+<br>
+
+Do our competitors have a similar product? If so, please list and include the name of their product(s)?
+</p>
+<textarea class="form" type="text" ng-model="newCompetitors" placeholder="Competitors"></textarea>
+
+
+<p>
+What advantage does our product have over the competition, or what key attribute we will be promoting to differentiate ourselves?
+</p>
+<textarea class="form" type="text" ng-model="newAdvan" placeholder="Advantage"></textarea>
+
+<p>
+Messages for the Target Audience:
+<br>
+Is there any word(s) you think is important to include in the name?
+</p>
+<textarea class="form" type="text" ng-model="newImportant" placeholder="important"></textarea>
+<p>
+Is there any word(s) we should absolutely avoid using in conjunction with the name?
+</p>
+<textarea class="form" type="text" ng-model="newAvoid" placeholder="Avoid"></textarea>
+
+
+
+<p>Suggestions</p>
+
+<p>Please provide suggested names you may already have, in priority order.</p>
+
+<textarea class="form" type="text" ng-model="newSuggest" placeholder="Suggested"></textarea>
+
+
+<p>Product Resources</p>
+<p>
+Is there documentation about this product that you can provide (scope document, BRD, internal presentation, etc.)? If so, please attach or send with this form.
+</p>
+
+<textarea class="form" type="text" ng-model="newDocument" placeholder="Document"></textarea>
+
+<p>Besides yourself, who are the best internal contacts for further information and explanations (please provide name and title)
+</p>
+<p>Sales:</p>
+
+<textarea class="form" type="text" ng-model="newSalesContact" placeholder="Contact"></textarea>
+
+<p>Product</p>
+
+<textarea class="form" type="text" ng-model="newProductContact" placeholder="Contact"></textarea>
+
+
+
+
+
+
+
+
+    <input class="bttn job-sub" type="submit" value="Submit">
+</form>
+
+    </div>
