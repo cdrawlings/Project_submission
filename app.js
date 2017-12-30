@@ -238,16 +238,15 @@ app.factory("jobEvents", ["$firebaseArray",
 ]);
 
 
-app.controller("projectCtrl", ["$scope", "jobProjects", "jobPower", "jobEvents", "jobNaming", "$rootScope", "$location",
+app.controller("projectCtrl", ["$scope", "jobProjects", "jobPower", "jobEvents", "jobNaming", "$route", "$rootScope", "$location", "$filter",
     // we pass our new jobProjects factory into the controller
-    function ($scope, jobProjects, jobPower, jobEvents, jobNaming, $route, $rootScope, $location) {
+    function ($scope, jobProjects, jobPower, jobEvents, jobNaming, $route, $rootScope, $location, $filter) {
 
         // we add jobProjects array to the scope to be used in our ng-repeat
         $scope.todos = jobProjects;
         $scope.power = jobPower;
         $scope.events = jobEvents;
         $scope.naming = jobNaming;
-
 
         $scope.addProject = function () {
 
@@ -321,6 +320,8 @@ app.controller("projectCtrl", ["$scope", "jobProjects", "jobPower", "jobEvents",
             });
         };
 
+
+
              //save updated date
         $scope.saveEdit = function (data, item, field) {
 
@@ -330,15 +331,14 @@ app.controller("projectCtrl", ["$scope", "jobProjects", "jobPower", "jobEvents",
             console.log(data, item);
         };
 
-        $scope.startTodo = function (id, todo) {
-
-            // CHECK THAT ITEM IS VALID
-            if (todo.$id === undefined) return;
+        $scope.startTodo = function (index, id, item) {
 
             // UPDATE STATUS TO IN PROGRESS AND SAVE
-            todo.status = 'working';
-            $scope.todos.$save(todo);
-            console.log(todo);
+
+            item.status= 'working';
+           this.todos[index].status = "working";
+           this.todos.$save(item);
+            console.log(item);
             console.log(status);
         };
 
@@ -491,6 +491,11 @@ app.controller("projectCtrl", ["$scope", "jobProjects", "jobPower", "jobEvents",
                     remaining++;
                 }
             });
+
+            $scope.todosPending = $filter("filter")($scope.todos, { 'status' : 'pending'});
+            $scope.todosWorking = $filter("filter")($scope.todos, { 'status' : 'working'});
+
+
             $scope.totalCount = total;
             $scope.remainingCount = remaining;
             $scope.allChecked = remaining === 0;
@@ -548,11 +553,16 @@ app.controller("projectCtrl", ["$scope", "jobProjects", "jobPower", "jobEvents",
         //Sortable
 
         $scope.sortableOptions = {
-            stop: function (event, ui) {
-                $scope.todos.forEach(function (todo) {
-                    todo.priority = $scope.todos.indexOf(todo);
+    stop: function (event, ui) {
+                $scope.todosWorking.forEach(function (todo) {
+                    todo.priority = $scope.todosWorking.indexOf(todo);
                     $scope.todos.$save(todo);
+
                 });
+                    $scope.todosPending.forEach(function (todo) {
+                    todo.priority = $scope.todosPending.indexOf(todo);
+                    $scope.todos.$save(todo);
+                     });
             }
         }
 

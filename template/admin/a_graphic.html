@@ -5,10 +5,10 @@
 <h4>Pending jobs</h4>
 
 
-<ul ui-sortable="sortableOptions" ng-model="todos">
-    <li ng-repeat="item in todos | orderBy:  'priority' | filter : {'status' : 'pending'}">
+<ul ui-sortable="sortableOptions" ng-model="todosPending" >
+    <li ng-repeat="item in todosPending | orderBy : 'priority'">
         {{item.job}} | {{item.due_date}} |
-        <button type="button" class="detail"
+        <button type="button"
                 data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
         </button>
 
@@ -20,7 +20,7 @@
 
 
 
-<button type="button" class="btn btn-default btn-sm"  ng-click="startTodo($index, todo)">
+<button type="button" class="btn btn-default bttn-custom-blue lh" ng-click="startTodo($index, $id, item)">
   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 </button>
 
@@ -56,8 +56,8 @@
 <h4>Active jobs</h4>
 
 
-<ul ui-sortable="sortableOptions" ng-model="todos">
-    <li ng-repeat="item in todos | orderBy:  'priority' | filter : {'status' : 'working'}">
+<ul ui-sortable="sortableOptions" ng-model="todosWorking">
+    <li ng-repeat="item in todosWorking | orderBy : 'priority'">
     {{item.job}} | {{item.due_date}} |
     <button type="button" class="detail"
             data-toggle="modal" data-target="#dialogTestDialog{{$index}}" ng-click="Clear()">details
@@ -69,7 +69,7 @@
         </a>
         -->
 
-<button type="button" class="btn btn-default btn-sm"  ng-click="ompleteTodo($index, todo)" >
+<button type="button" class="btn btn-default btn-sm"  ng-click="completeTodo($index, todo)" >
   <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
 </button>
 
@@ -114,7 +114,3 @@
 
     </li>
 </ul>
-
-
-
-
